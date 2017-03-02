@@ -18,9 +18,9 @@ public class Pobieranie {
 	
 	public static BigDecimal pobierzAktualnyKurs(String kodWaluty) throws ProblemZPobieraniem {
 		String tabela = "A";
-		String adres = baseUrl + tabela + "/" + kodWaluty + "/";
+		String adres = baseUrl + tabela + "/" + kodWaluty + "/?format=xml";
 		
-		System.out.println("Wysyam zapytanie pod adres " + adres);
+		System.out.println("Wysyłam zapytanie pod adres " + adres);
 		
 		try {
 			URL url = new URL(adres);
