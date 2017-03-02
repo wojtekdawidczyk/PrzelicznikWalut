@@ -168,6 +168,10 @@ public class OknoPrzelicznika {
 			String waluta2 = "" + comboBox_2.getSelectedItem();
 			
 		try {
+			// TODO
+			// 1) Pobieranie danych z serwera powinno się odbywać "w tle" - klasa SwingWorker
+			// 2) Powinniśmy nie wyrzucać błędów gdy jest puste pole z walutą itp.
+			
 			BigDecimal kurs1 = Pobieranie.pobierzAktualnyKurs(waluta1);
 			BigDecimal kurs2 = Pobieranie.pobierzAktualnyKurs(waluta2);
 			
@@ -183,9 +187,5 @@ public class OknoPrzelicznika {
 		} catch (ProblemZPobieraniem e) {
 			e.printStackTrace();
 		}
-		
-		
-		
 	}
-	
 }
