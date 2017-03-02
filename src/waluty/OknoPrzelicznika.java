@@ -12,6 +12,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
+import javax.swing.DefaultComboBoxModel;
 
 public class OknoPrzelicznika {
 
@@ -49,7 +50,7 @@ public class OknoPrzelicznika {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 396, 245);
+		frame.setBounds(100, 100, 542, 294);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JLabel lblNewLabel = new JLabel("Ile PLN?");
@@ -61,8 +62,10 @@ public class OknoPrzelicznika {
 		JLabel lblNewLabel_3 = new JLabel("Ile waluty na PLN?");
 		
 		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"EUR", "USD", "CHF", "JPY", "GBP"}));
 		
 		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"EUR", "USD", "CHF", "JPY", "GBP"}));
 		
 		textField = new JTextField();
 		textField.setColumns(10);
@@ -109,10 +112,10 @@ public class OknoPrzelicznika {
 						.addComponent(label, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
 						.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(71, Short.MAX_VALUE))
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-					.addContainerGap(154, Short.MAX_VALUE)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(211)
 					.addComponent(btnNewButton)
-					.addGap(147))
+					.addContainerGap(236, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -137,9 +140,9 @@ public class OknoPrzelicznika {
 						.addComponent(comboBox_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(26)
+					.addGap(47)
 					.addComponent(btnNewButton)
-					.addGap(24))
+					.addGap(52))
 		);
 		frame.getContentPane().setLayout(groupLayout);
 	}
